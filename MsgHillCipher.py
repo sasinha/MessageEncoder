@@ -1,7 +1,5 @@
 #!usr/bin/python3
 
-import numpy as np
-
 char=list(string.ascii_lowercase)
 
 operationType = input("Would you like to encrypt (e) or decrypt (d)? ").lower()
