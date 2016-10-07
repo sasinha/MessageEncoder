@@ -1,5 +1,6 @@
 #!usr/bin/python3
 import MessageMatrixRelation.py
+import string
 
 char=list(string.ascii_lowercase)
 

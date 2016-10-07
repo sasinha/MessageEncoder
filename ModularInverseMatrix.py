@@ -7,11 +7,11 @@ class ModularInverseMatrix:
         self.modulo = modulo
 
     #  copy-pasted from old cipher and needs cleanup
-    def inverseMatrix(self):
-        A = self.inputMatrix
+    def inverse_matrix(self):
+        a = self.inputMatrix
         m = self.modulo
-        P = np.round(np.linalg.det(A) * np.linalg.inv(A))
-        a = np.round(np.linalg.det(A))
+        p = np.round(np.linalg.det(a) * np.linalg.inv(a))
+        a = np.round(np.linalg.det(a))
         num = np.arange(1, m + 1)  # creates a modulo dictionary
         res = np.mod(a * num, m)
         b = np.where(res == 1)
@@ -20,7 +20,7 @@ class ModularInverseMatrix:
             print("The matrix has no modulable inverse")
             return
         b = b[0].item(0) + 1
-        return np.mod(b * P, m).astype(int)
+        return np.mod(b * p, m).astype(int)
 
 # Uncomment below for test
 
