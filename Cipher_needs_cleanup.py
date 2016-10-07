@@ -97,7 +97,7 @@ def modinv(matrix,modulo=26):
         b=np.where(res==1)
         err=np.size(b)
         if err == 0:
-                print("The randomly generated cipher matrix is not modulable")
+                print("The matrix has no modulable inverse")
                 return
         b=b[0].item(0)+1
         return np.mod(b*P,m).astype(int)
