@@ -8,8 +8,13 @@ operationType = input("Would you like to encrypt (e) or decrypt (d)? ").lower()
 message = input("What is your message? ") + "//"
 key = input("What is your key? ")
 
-else:
-    print(Decryptor.unscrambledMessage)
+if operationType == 'e':
+    encrypted = encrypt(message,key)
+    print("Encrypted message: ", encrypted.scrambled_message)
+
+elif operationType == 'd':
+    decrypted = decrypt(message, key)
+
 
 
 

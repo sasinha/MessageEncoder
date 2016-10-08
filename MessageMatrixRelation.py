@@ -1,4 +1,5 @@
 import numpy as np
+from ModularInverseMatrix import inverse_matrix
 
 # import string
 
@@ -7,32 +8,25 @@ import numpy as np
 
 characters = '013456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\x0b2'
 modulo = len(characters)  # number of characters
-characterToNumber = dict(zip(characters, range(0, modulo)))
-numberToCharacter = dict(zip(range(0, modulo), characters))
 
 
-class ToMatrix:
-    characterToNumber = dict(zip(characters, range(0, modulo)))
-
-    def __init__(self, message, dimension):
-        self.messageNumbers = list([self.characterToNumber[x] for x in list(message)])
-        self.dimension = dimension
-
-    def matrix(self):
-        return np.resize(self.messageNumbers, self.dimension)
+def to_matrix(message, dimension):
+    character_to_number = dict(zip(characters, range(0, modulo)))
+    message_numbers = list([character_to_number[x] for x in list(message)])
+    return np.resize(message_numbers, dimension)
 
 
-class ToMessage:
-    numberToCharacter = dict(zip(range(0, modulo), characters))
+def to_message(matrix):
+    number_to_character = dict(zip(range(0, modulo), characters))
+    return ''.join(number_to_character[x] for x in list(np.concatenate(list(matrix))))
 
-    def __init__(self, matrix):
-        self.matrix = matrix
-
-    def message(self):
-        return ''.join(numberToCharacter[x] for x in list(np.concatenate(list(self.matrix))))
-
-# test = ToMatrix("hello, HoW are you2",(10,10)).matrix()
-# testWork = ToMessage(test).message()
+# test = to_matrix("hello, HoW are you2",(10,10))
+# testWork = to_message(test)
 #
 # print(test)
 # print(testWork)
+
+
+
+
+
