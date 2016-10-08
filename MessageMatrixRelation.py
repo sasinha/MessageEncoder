@@ -13,7 +13,7 @@ class ToMatrix:
 
     characterToNumber = dict(zip(characters, range(0, modulo)))
 
-    def __init__(self, message, dimension):  # Create more modulable ToMatrix. Ask for dimension in other package
+    def __init__(self, message, dimension):
         self.messageNumbers = list([self.characterToNumber[x] for x in list(message)])
         self.dimension = dimension
 
@@ -30,11 +30,11 @@ class ToMessage:
     def matrix_message(self):
         return ''.join(numberToCharacter[x] for x in list(np.concatenate(list(self.matrix))))
 
-test = ToMatrix("hello, HoW are you2",(10,10)).message_matrix()
-testWork = ToMessage(test).matrix_message()
-
-print(test)
-print(testWork)
+# test = ToMatrix("hello, HoW are you2",(10,10)).message_matrix()
+# testWork = ToMessage(test).matrix_message()
+#
+# print(test)
+# print(testWork)
 
 
 
