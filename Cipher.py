@@ -5,22 +5,20 @@ import numpy as np
 
 class Cipher:
 
-    def __init__(self, input_message, key):
+    def __init__(self, input_message, dimension):
 
         # self.characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\x0b'
         self.characters = 'abcdefghijklmnopqrstuvwxyz /"'
-
         self.modulo = len(self.characters) - 1
-        key_matrix_column_length = np.ceil(len(key) ** .5).astype(int)
-        key_matrix_dimension = (key_matrix_column_length, key_matrix_column_length)
-        message_matrix_dimension = (key_matrix_column_length, np.ceil(len(key) / key_matrix_column_length).astype(int))
-        self.input_message_matrix = to_matrix(input_message, message_matrix_dimension, self.characters)
-        self.key_matrix = to_matrix(key, key_matrix_dimension, self.characters)
+        self.cipher_matrix_dimension = (dimension, dimension)
+        input_message_matrix_dimension = (dimension, np.ceil(len(input_message) / dimension).astype(int))
+        self.input_message_matrix = to_matrix(input_message, input_message_matrix_dimension, self.characters)
 
     def encrypt(self):
-        cipher_matrix = inverse_matrix(self.key_matrix, self.modulo)
+        cipher_matrix = np.random.randint(0, self.modulo, self.cipher_matrix_dimension)
+        key_matrix = inverse_matrix(cipher_matrix, self.modulo)
         scrambled_message_matrix = np.mod(np.dot(cipher_matrix, self.input_message_matrix), self.modulo)
-        return to_message(scrambled_message_matrix, self.characters)
+        return to_message(scrambled_message_matrix, self.characters), to_message(key_matrix, self.characters)
 
     def decrypt(self):
         unscrambled_message_matrix = np.mod(np.dot(self.key_matrix, self.input_message_matrix), self.modulo)
@@ -31,7 +29,7 @@ class Cipher:
 
 message = "hello how are / "
 password = "supsdsdfgff "
-scrambled_message = Cipher(message,password).encrypt()
+scrambled_message = Cipher(message, 3).encrypt()
 print(scrambled_message)
 print(len(message), len(password), len(scrambled_message))
 
