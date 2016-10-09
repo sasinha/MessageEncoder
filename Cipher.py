@@ -10,7 +10,6 @@ class Cipher:
         self.characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\x0b'
 
         self.modulo = len(self.characters) - 1
-        if
         key_matrix_column_length = np.ceil(len(key) ** .5).astype(int)
         key_matrix_dimension = (key_matrix_column_length, key_matrix_column_length)
         message_matrix_dimension = (key_matrix_column_length, np.ceil(len(key) / key_matrix_column_length).astype(int))
