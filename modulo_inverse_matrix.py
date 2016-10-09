@@ -27,5 +27,10 @@ def inverse_matrix(inputMatrix,modulo):
 # print(mInverse)
 # print(mResult)
 
+modulo = 26
+A = np.random.randint(0,modulo, (3,3))
+b= inverse_matrix(A, modulo)
+print(b)
+
 
 
