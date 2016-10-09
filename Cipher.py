@@ -7,7 +7,8 @@ class Cipher:
 
     def __init__(self, input_message, key):
 
-        self.characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\x0b'
+        # self.characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\x0b'
+        self.characters = 'abcdefghijklmnopqrstuvwxyz /"'
 
         self.modulo = len(self.characters) - 1
         key_matrix_column_length = np.ceil(len(key) ** .5).astype(int)
@@ -28,8 +29,8 @@ class Cipher:
 
 # Test
 
-message = "Hello / "
-password = "itit"
+message = "hello how are / "
+password = "supsdsdfgff "
 scrambled_message = Cipher(message,password).encrypt()
 print(scrambled_message)
 print(len(message), len(password), len(scrambled_message))
