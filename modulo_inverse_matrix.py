@@ -17,6 +17,19 @@ def inverse_matrix(inputMatrix,modulo):
     b = b[0].item(0) + 1
     return np.mod(b * p, m).astype(int)
 
+
+def random_mod_matrix(min, max, dimension):
+    inverse_mod_matrix = 0
+    while inverse_mod_matrix == 0:
+        random_matrix = np.random.randint(min,max, dimension)
+        inverse_mod_matrix = inverse_matrix(random_matrix, max)
+        return random_matrix, inverse_mod_matrix
+
+
+
+
+
+
 # Uncomment below for test
 
 
@@ -27,18 +40,8 @@ def inverse_matrix(inputMatrix,modulo):
 # print("Inverse: ", mInverse)
 # print("result: ", mResult)
 
-
-
-
-def test():
-    modulo = 27
-    c = 0
-    while c == 0:
-        A = np.random.randint(0, modulo, (4, 4))
-        b = inverse_matrix(A, modulo)
-        c = b.all()
-        if c != 0:
-            return b
-
-b=test()
-print(b)
+#
+# test, testv = random_mod_matrix(0,97,(5,5))
+#
+# print(test)
+# print(testv)

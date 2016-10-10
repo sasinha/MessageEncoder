@@ -1,5 +1,5 @@
 from message_matrix_relation import to_matrix, to_message
-from modulo_inverse_matrix import inverse_matrix
+from modulo_inverse_matrix import inverse_matrix, random_mod_matrix
 import numpy as np
 
 characters = 'abcdefghijklmnopqrstuvwxyz /"'
@@ -32,13 +32,7 @@ def encrypt(input_message, dimension):
     input_message_matrix_dimension = (dimension, np.ceil(len(input_message) / dimension).astype(int))
     input_message_matrix = to_matrix(input_message, input_message_matrix_dimension, characters)
     cipher_matrix_dimension = (dimension, dimension)
-
-    key_matrix = 'X'
-    while key_matrix == 'X':
-        cipher_matrix = np.random.randint(0, modulo, cipher_matrix_dimension)
-        key_matrix = inverse_matrix(cipher_matrix, modulo)
-    else:
-        return cipher_matrix
+    (cipher_matrix, key_matrix) = (random_mod_matrix(0,modulo,cipher_matrix_dimension))
     scrambled_message_matrix = np.mod(np.dot(cipher_matrix, input_message_matrix), modulo)
     return to_message(scrambled_message_matrix, characters), to_message(key_matrix, characters)
 
