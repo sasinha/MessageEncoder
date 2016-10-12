@@ -14,7 +14,8 @@ def to_message(matrix, character_string):
 
 #
 # characters = '013456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\x0b2'
-# test = to_matrix("013456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVW XYZ!", (10, 3), characters)
+# characters = 'abcdefghijklmnopqrstuvwxyz /"'
+# test = to_matrix("hello, how are you dude / ", (8,8), characters)
 # testWork = to_message(test, characters)
 #
 # print(test)
