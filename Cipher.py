@@ -22,12 +22,12 @@ def decrypt(input_message, key):
     key_matrix_column_length = int(len(key) ** .5)
     key_matrix_dimension = (key_matrix_column_length, key_matrix_column_length)
     scrambled_message_matrix_dimension = (
-        key_matrix_column_length, np.ceil(len(input_message) / key_matrix_column_length)
+        key_matrix_column_length, int(np.ceil(len(input_message) / key_matrix_column_length))
     )
     key_matrix = to_matrix(key, key_matrix_dimension, characters)
     scrambled_message_matrix = to_matrix(input_message, scrambled_message_matrix_dimension, characters)
-    # unscrambled_message_matrix = np.mod(np.dot(key_matrix, scrambled_message_matrix), modulo)
-    # return to_message(unscrambled_message_matrix, characters)
+    unscrambled_message_matrix = np.mod(np.dot(key_matrix, scrambled_message_matrix), modulo)
+    return to_message(unscrambled_message_matrix, characters)
 
 
 
