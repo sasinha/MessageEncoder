@@ -13,18 +13,19 @@ def inverse_matrix(inputMatrix,modulo):
     err = np.size(b)
     if err == 0:
         # print("The matrix has no modular inverse")
-        return err
+        return 0
     b = b[0].item(0) + 1
     return np.mod(b * p, m).astype(int)
 
 
 def random_mod_matrix(min, max, dimension):
-    random_matrix = np.random.randint(min,max, dimension)
-    inverse_mod_matrix = inverse_matrix(random_matrix, max)
-    if inverse_mod_matrix == 0:
-        random_mod_matrix(min, max, dimension)
-    else:
-        return random_matrix, inverse_mod_matrix
+    random_matrix = 0
+    while random_matrix == 0:
+        random_matrix = np.random.randint(min, max, dimension)
+        return random_matrix
+
+
+
 
 
 
@@ -40,11 +41,10 @@ def random_mod_matrix(min, max, dimension):
 # mInverse=inverse_matrix(mTest,26)
 # print("Inverse: ", mInverse)
 # print("result: ", mResult)
+#
 
-
-test, testv = random_mod_matrix(0,28,(3,3))
-testvv = inverse_matrix(test, 28)
+test = random_mod_matrix(0,28,(3,3))
+testb = inverse_matrix(test, 28)
 
 print(test)
-print(testv)
-print(testvv)
+print(testb)
