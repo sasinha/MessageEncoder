@@ -20,9 +20,10 @@ def inverse_matrix(inputMatrix,modulo):
 
 def random_mod_matrix(min, max, dimension):
     random_matrix = 0
-    while random_matrix == 0:
+    while np.equal(random_matrix,0) == 1:
         random_matrix = np.random.randint(min, max, dimension)
-        return random_matrix
+        pass
+    return random_matrix
 
 
 
