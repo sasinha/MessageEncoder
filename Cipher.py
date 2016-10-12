@@ -2,7 +2,8 @@ from message_matrix_relation import to_matrix, to_message
 from modulo_inverse_matrix import inverse_matrix, random_mod_matrix
 import numpy as np
 
-characters = 'abcdefghijklmnopqrstuvwxyz /"'
+# characters = 'abcdefghijklmnopqrstuvwxyz /"'
+characters = '013456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\x0b2'
 
 
 def encrypt(input_message, dimension):
@@ -33,11 +34,11 @@ def decrypt(input_message, key):
 
 
 # Test
-
-message = "hello / "
-scrambled_message = encrypt(message, 3)
-print(scrambled_message)
-
-unscrambled_message = decrypt(scrambled_message[0], scrambled_message[1])
-print(unscrambled_message)
-
+#
+# message = "hello, how are you? Lets go meet for dinner / "
+# scrambled_message = encrypt(message, 7)
+# print(scrambled_message)
+#
+# unscrambled_message = decrypt(scrambled_message[0], scrambled_message[1])
+# print(unscrambled_message)
+#
