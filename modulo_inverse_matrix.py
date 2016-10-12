@@ -19,11 +19,16 @@ def inverse_matrix(inputMatrix,modulo):
 
 
 def random_mod_matrix(min, max, dimension):
-    random_matrix = 0
-    while np.equal(random_matrix,0) == 1:
-        random_matrix = np.random.randint(min, max, dimension)
-        pass
+    random_matrix = np.random.randint(min, max, dimension)
+    if random_matrix.all == 0:
+        random_matrix = random_mod_matrix(min,max,dimension)
+    else:
+        inverse_mod = inverse_matrix(random_matrix, max)
+        if np.size(inverse_mod) == 1:
+            return random_mod_matrix(min,max,dimension)
     return random_matrix
+
+
 
 
 
@@ -44,8 +49,8 @@ def random_mod_matrix(min, max, dimension):
 # print("result: ", mResult)
 #
 
-test = random_mod_matrix(0,28,(3,3))
-testb = inverse_matrix(test, 28)
-
-print(test)
-print(testb)
+# test = random_mod_matrix(0,28,(3,3))
+# testb = inverse_matrix(test, 28)
+#
+# print(test)
+# print(testb)

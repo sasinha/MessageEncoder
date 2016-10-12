@@ -11,7 +11,8 @@ def encrypt(input_message, dimension):
     input_message_matrix_dimension = (dimension, np.ceil(len(input_message) / dimension).astype(int))
     input_message_matrix = to_matrix(input_message, input_message_matrix_dimension, characters)
     cipher_matrix_dimension = (dimension, dimension)
-    cipher_matrix, key_matrix = random_mod_matrix(0, modulo, cipher_matrix_dimension)
+    cipher_matrix = random_mod_matrix(0, modulo, cipher_matrix_dimension)
+    key_matrix = inverse_matrix(cipher_matrix, modulo)
     scrambled_message_matrix = np.mod(np.dot(cipher_matrix, input_message_matrix), modulo)
 
 
