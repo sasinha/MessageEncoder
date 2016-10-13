@@ -1,6 +1,7 @@
 import numpy as np
 from collections import OrderedDict
 
+
 def to_matrix(message, dimension, character_string):
     modulo = len(character_string) - 1
     character_to_number = OrderedDict(zip(character_string, range(0, modulo)))
@@ -12,7 +13,8 @@ def to_message(matrix, character_string):
     number_to_character = OrderedDict(zip(range(0, modulo), character_string))
     return ''.join(number_to_character[x] for x in list(np.concatenate(list(matrix))))
 
-#
+
+
 # characters = '013456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\x0b2'
 # characters = 'abcdefghijklmnopqrstuvwxyz /"'
 # test = to_matrix("hello, how are you dude / ", (8,8), characters)
