@@ -1,19 +1,19 @@
 #!usr/bin/python3
-import message_matrix_relation.py
-import string
-
-char=list(string.ascii_lowercase)
+from Cipher import encrypt, decrypt
 
 operationType = input("Would you like to encrypt (e) or decrypt (d)? ").lower()
-message = input("What is your message? ") + "//"
-key = input("What is your key? ")
+message = input("What is your message? ") + " // "
 
 if operationType == 'e':
-    encrypted = encrypt(message,key)
-    print("Encrypted message: ", encrypted.scrambled_message)
+    dimension = int(input("What dimension would you like your key matrix to be? "))
+    encrypted = encrypt(message, dimension)
+    print("Encrypted message: ", encrypted[0])
+    print("Key: ", encrypted[1])
 
 elif operationType == 'd':
+    key = input("What is your key? ")
     decrypted = decrypt(message, key)
+    print("Unscrambled message: ", decrypted)
 
 
 
