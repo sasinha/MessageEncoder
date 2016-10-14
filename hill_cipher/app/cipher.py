@@ -1,6 +1,7 @@
-from hill_cipher import message_matrix_relation as mmr, modulo_inverse_matrix as mim
 import numpy as np
 
+from hill_cipher import modulo_inverse_matrix as mim
+from hill_cipher.app import message_matrix_relation as mmr
 
 characters = '0213456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\x0b2'
 
