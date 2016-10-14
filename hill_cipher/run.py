@@ -1,23 +1,7 @@
 #!usr/bin/python3
-
-from hill_cipher.app import cipher
+from hill_cipher.app import operation as op
 
 operationType = input("Would you like to encrypt (e) or decrypt (d)? ").lower()
 message = input("What is your message? ") + " // "
-
-if operationType == 'e':
-    dimension = int(input("What dimension would you like your key to be? "))
-    encrypted = cipher.encrypt(message, dimension)
-    print("Encrypted message: ", encrypted[0])
-    print("Key: ", encrypted[1])
-
-elif operationType == 'd':
-    key = input("What is your key? ")
-    decrypted = cipher.decrypt(message, key)
-    print("Unscrambled message: ", decrypted)
-
-
-
-
-
+answer = op.cipher_operation(operationType, message)
 
