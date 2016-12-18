@@ -2,7 +2,6 @@
     position: absolute;
     top: 0; left: 0;
     right: 50%; bottom: 50%;
-    background: red;
     border:solid #000;
     border-width: 0 10px 10px 0;
 }
@@ -12,7 +11,6 @@
     left: 50%;
     right: 0;
     bottom: 50%;
-    background: blue;
     border:solid #000;
     border-width: 0 0 10px 0;
 }
@@ -22,7 +20,6 @@
     left: 0;
     right: 50%;
     bottom: 0;
-    background: yellow;
     border:solid #000;
     border-width: 0 10px 0 0;
 }
@@ -33,5 +30,13 @@
     left: 50%;
     right: 0;
     bottom: 0;
-    background: green;
+}
+
+.message {
+    width: 85%;
+    height:100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    resize: none;
 }
