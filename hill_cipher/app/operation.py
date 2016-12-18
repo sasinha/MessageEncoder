@@ -1,5 +1,5 @@
 
-from hill_cipher.app import cipher
+from app import cipher
 
 
 def cipher_operation(operation_type, message):

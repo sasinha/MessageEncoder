@@ -1,5 +1,5 @@
 #!usr/bin/python3
-from hill_cipher.app import operation as op
+from app import operation as op
 
 operationType = input("Would you like to encrypt (e) or decrypt (d)? ").lower()
 message = input("What is your message? ") + " // "
