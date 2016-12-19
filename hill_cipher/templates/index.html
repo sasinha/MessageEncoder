@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 
 
-<html lang="en">
+<html lang="en" ng-app>
+
 <head>
+    <script type="text/javascript" src="../static/operate.js"></script>
     <link rel="stylesheet" href="../static/indexStyle.css" type="text/css">
 </head>
 
 
 <div class="plain">
-    <textarea class="message"> "Text"</textarea>
+    <form action="/operate.html" method="POST">
+    <div class="msg">
+        <textarea class="msgText" id="plainText"></textarea>
+        <input value="Enter" type="submit" name="plain" />
+    </div>
+    </form>
 </div>
 <div class="cipher"></div>
 <div class="key"></div>

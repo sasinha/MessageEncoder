@@ -2,6 +2,7 @@
     position: absolute;
     top: 0; left: 0;
     right: 50%; bottom: 50%;
+    background-color: aqua;
     border:solid #000;
     border-width: 0 10px 10px 0;
 }
@@ -32,11 +33,33 @@
     bottom: 0;
 }
 
-.message {
-    width: 85%;
+.msg {
+    /* Centered. Must alter left value if width changes*/
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 70%;
+    background-color: blueviolet;  /* For visibility */
+}
+
+.msgText {
+    /* Fills entire parent */
+    width: 100%;
     height:100%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     resize: none;
 }
+
+.msgForm {
+    left: 0;
+    position: absolute;
+    right: 60px;
+    width:90%;
+
+}
+
+
