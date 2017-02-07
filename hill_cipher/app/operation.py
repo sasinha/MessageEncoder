@@ -1,5 +1,5 @@
 
-from app import cipher
+from hill_cipher.app import cipher
 
 
 def cipher_operation(operation_type, message):
@@ -9,11 +9,9 @@ def cipher_operation(operation_type, message):
         encrypted = cipher.encrypt(message, dimension)
         print("Encrypted message: ", encrypted[0])
         print("Key: ", encrypted[1])
-        return encrypted
 
     elif operation_type == 'd':
         key = input("What is your key? ")
         decrypted = cipher.decrypt(message, key)
         print("Unscrambled message: ", decrypted)
-        return decrypted
 

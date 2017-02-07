@@ -1,5 +1,5 @@
 import numpy as np
-from app import message_matrix_relation as mmr, modulo_inverse_matrix as mim
+from hill_cipher.app import message_matrix_relation as mmr, modulo_inverse_matrix as mim
 
 
 characters = '0213456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\x0b2'
