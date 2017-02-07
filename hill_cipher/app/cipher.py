@@ -34,11 +34,12 @@ def decrypt(input_message, key):
 
 
 # Test
-#
-# message = "hello, how are you? Lets go meet for dinner / "
-# scrambled_message = encrypt(message, 3)
-# print(scrambled_message)
-#
-# unscrambled_message = decrypt(scrambled_message[0], scrambled_message[1])
-# print(unscrambled_message)
-#
+if __name__ == "__main__":
+
+    message = "hello, how are you? Lets go meet for dinner / "
+    scrambled_message = encrypt(message, 3)
+    print(scrambled_message)
+
+    unscrambled_message = decrypt(scrambled_message[0], scrambled_message[1])
+    print(unscrambled_message)
+
